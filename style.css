@@ -1,0 +1,16 @@
+#d1 {
+	display: inline-block;
+}
+
+
+body{
+
+	padding: 70px;
+	border: 1px solid #4CAF50;
+	position: relative;
+
+}
+
+#w{
+	width: 500px; 
+}
