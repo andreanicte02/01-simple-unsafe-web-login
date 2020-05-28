@@ -98,8 +98,158 @@
 
        
 
-  - ### body
+       
 
-       Es la parte final de un request y del response, no todos los request y response tienen uno .Contienen data asociada con un request.
+- ## body
 
+     Es la parte final de un request y del response, no todos los request y response tienen uno .Contienen data asociada con un request.
      
+        
+     
+     # ***Login simple***
+     
+- ## servidor apache con php
+
+  Se utilizo xampp, para levantar un servidor local 
+
+  [](https://www.apachefriends.org/es/index.html)
+
+  
+
+- ## css
+
+  Se utilizan para aplicar estilos a documentos html de forma masiva
+
+  - ### display
+
+    Todos los elementos constan de un display, se puede decir que esta propiedad define el tipo de caja que genera un elemento.
+
+    - #### block
+
+      Muestra los elementos en lineas independientes y tiene propiedades width, height y margenes verticales.
+
+    - #### inline
+
+      Es el valor inicial, muenstra en la misma linea todos los elementos, no tiene propiedades width, height, ni margenes verticales.
+
+    - #### inline-block
+
+      Es un mezcla de los dos anteriores, se muestra en la misma linea los elementos, y acepta propiedades width, height y margenes verticales
+
+  - ### margin
+
+    Setea el margen de area en todos los lados de un elemento
+
+  - ### padding
+
+    Se usa para generar espacio al rededor del contenido de un elemento, dentro de cualquier borde definido
+
+  - ### border
+
+    Permite especificar el estilo, tamaño, color del borde de un elemento
+
+  - ### position
+
+    Especifica el metodo de posicionamento de un elemento
+
+    - #### static
+
+      Esta posicion no es afectada por las propiedades top, bottom left y right.
+
+    - #### absolute
+
+      Posicion relativa con el elemento anterior
+
+    - #### relative
+
+      Es la posicion normal de un elemento 
+
+    - #### fixed
+
+      Posicion relativa con el viewport
+
+    - #### sticky
+
+      Posicion basada con la posicion del scroll del usuario 
+
+- ## html
+
+  - ### form
+
+    Representa una seccion de un documento que contiene controles interactivos que permiten al usuario enviar informacion a un servidor web
+
+    - #### action
+
+      Es la url que procesa la informacion del formulario 
+
+    - #### method
+
+      Es el metodo con el que se va procesar la informacion, puede ser get, post o dialog, se usa post cuando se desea enviar datos al servidor, y get cuando se desean agregar datos al final de una url
+
+    - #### comportamiento de type button 
+
+      Por lo general sus efectos estan controlados por cosas como js
+
+    - #### comportamiento de type submit
+
+      Se utiliza para enviar datos del formulario al servidor
+
+      
+
+    > Tanto <button type="submit"> como <input type="submit"> puen enviar la informacion de un form al servidor. La diferencia entre button  submit es que <button> puede tener contenido mientras que <input> es un elemento nulo, por lo que button tiene mas opciones de personalizacion. 
+
+  
+
+- ## php
+
+  - ### $_POST
+
+    Es un arreglo de nombres de variables con sus respectivos valores, enviados a travez de HTTP POST method, cuando se utiliza este metodo la data va a traves del body del HTTP Request,  por lo que no es visible
+
+  - ### $_GET
+
+    Es una variable global usada para obtener la data de un form a travez del HTTP GET method, cuando se utiliza este metodo la informacion se puede ver a travez del url.
+
+    
+
+  > Es recomendado utilizar el metodo post, para enviar datos al servidor y get para obtener datos del servidor.
+
+  - ### Orden del proceso
+
+    ```html
+    	<form method="post" action="login.php">
+    			<label> user: </label>
+    			<p>
+    			<input type="text" name="strUserName">
+    			<p>
+    			<label> pass: </label>
+    			<p>
+    			<input type="password" name="strPassword">
+    			<p>
+    			<input type="submit" value="log">
+    		</form>
+    ```
+
+    
+
+    1. En la propiedad method, se indica que HTTP method se va utilizar
+    2. En action, se indica el archivo php que se va procesar para llevar acabo dicha accion
+    3. En los campos <input> se le agrega la propiedad name, la cual nos va servir para identificar las variables del lado del servidor.
+
+    
+
+    ```php
+    
+    	$userName = $_POST["strUserName"];
+    	$userPass = $_POST["strPassword"];
+    
+    ```
+
+    3. Con las variables $_POST y el name asignado en html, se recupera la informacion enviada a travez del form, para comparar dicha informacion.
+
+  - ### Content Type
+
+    ![image-20200528002738214](/home/nicte/.config/Typora/typora-user-images/image-20200528002738214.png)
+
+  
+
